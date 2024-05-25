@@ -2,6 +2,7 @@ package org.sopt.spring.external;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
+@Service
 public class S3Service {
 
     private final String bucketName;

@@ -8,7 +8,6 @@ import org.sopt.spring.blog.dto.BlogCreateRequest;
 import org.sopt.spring.blog.dto.BlogTitleUpdateRequest;
 import org.sopt.spring.member.domain.Member;
 import org.sopt.spring.post.domain.Post;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -5,7 +5,7 @@ echo "> build 파일명: $JAR_NAME"
 
 echo "> build 파일 복사"
 DEPLOY_PATH=/home/ubuntu/app/
-cp $BUILD_PATH $DEPLOY_PATH
+cp -f $BUILD_PATH $DEPLOY_PATH
 
 echo "> 현재 구동중인 Port 확인"
 BLUE_PROFILE=$(curl -s http://localhost/profile || echo "NO_PROFILE")
@@ -35,7 +35,7 @@ ln -Tfs $DEPLOY_PATH$JAR_NAME $GREEN_APPLICATION_PATH
 
 echo "----------------------------------------------------------------------"
 echo "> $GREEN_PROFILE 배포"
-nohup java -jar -Duser.timezone=Asia/Seoul -Dspring.profiles.active=$GREEN_PROFILE $GREEN_APPLICATION_PATH >> /home/ubuntu/app/nohup.out 2>&1 &
+nohup java -jar -Duser.timezone=Asia/Seoul -Dspring.profiles.active=$GREEN_PROFILE -Dserver.port=$GREEN_PORT $GREEN_APPLICATION_PATH >> /home/ubuntu/app/nohup.out 2>&1 &
 
 echo "----------------------------------------------------------------------"
 
